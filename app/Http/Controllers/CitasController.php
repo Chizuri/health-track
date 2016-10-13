@@ -19,8 +19,10 @@ class CitasController extends Controller
 
     //Muestra el listado de citas
     public function index()	{
-        /** Muestra las citas del usuario logueado */
+        /** Muestra las citas del doctor logueado 
         $citas = VWCitas::all()->where('doctor', '=', Auth::user()->id);
+		**/
+		$citas = VWCitas::all();
         //dd($citas);
         return View('clinica.citas', compact('citas'));
     }
